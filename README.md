@@ -1,4 +1,5 @@
 This is modification of Nelson Rouque's php implementation of the automated operation span task (aospan).
+
 see: https://github.com/nelsonroque/aospan for original code
 
 A few bug fixes were implemented, described in CHANGE LOG below.
@@ -27,6 +28,8 @@ ex. usage) yourwebsite.com/aospan/index.php?study=yourstudyname&MID=workerID
 To access data from the task, navigate to http://yourwebsite.com/aospan/data
 
 CHANGE LOG
+
+
 Issue: If response to math problems is double clicked you get twice the credit.
 Solution: Implemented button disabling after clicks to prevent double clicks.
 
