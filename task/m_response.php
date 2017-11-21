@@ -18,17 +18,17 @@ unset($_POST['FALSE']);
 	    <div id="row">
 	      <div id="col2">
 	      <center>
-	        <form action="get_feedback.php" method="post">
-	          <input id="allclicks" type="hidden" name='TRUE'>
-	          <input id="function_button" type="submit" value='TRUE'>
+	        <form action="get_feedback.php" method="post" onSubmit="document.getElementsByClassName('TF')[0].disabled=true;document.getElementsByClassName('TF')[1].disabled=true;">
+	          <input id="allclicks" type="hidden" name="TRUE">
+	          <input id="function_button" class="TF" type="submit" value="TRUE">
 	        </form>
 	       </center>
 	      </div>
 	      <div id="col2">
 	      <center>
-	        <form action="get_feedback.php" method="post">
-	          <input id="allclicks" type="hidden" name='FALSE'>
-	          <input id="function_button" type="submit" value='FALSE'>
+	        <form action="get_feedback.php" method="post"  onSubmit="document.getElementsByClassName('TF')[0].disabled=true;document.getElementsByClassName('TF')[1].disabled=true;">
+	          <input id="allclicks" type="hidden" name="FALSE">
+	          <input id="function_button" class="TF" type="submit" value="FALSE">
 	        </form>
 	       </center>
 	      </div>

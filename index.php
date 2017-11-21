@@ -185,12 +185,14 @@ $_SESSION['mix_data_path'] = $_SESSION['practice_data_path']. "mix". "/";
 $_SESSION['task_data_path'] = $_SESSION['study_data_path'] . "task". "/";
 
 if (!file_exists($_SESSION['study_data_path'])) {
-    mkdir($_SESSION['study_data_path'], 0777);
+    $old_umask = umask(0); // edited by Aaron G, see: https://stackoverflow.com/questions/4134702/mkdir-in-php-is-setting-folder-permission-to-755-but-i-need-777
+	mkdir($_SESSION['study_data_path'], 0777);
     mkdir($_SESSION['practice_data_path'], 0777);
     mkdir($_SESSION['letter_data_path'], 0777);
     mkdir($_SESSION['math_data_path'], 0777);
     mkdir($_SESSION['mix_data_path'], 0777);
     mkdir($_SESSION['task_data_path'], 0777);
+	umask($old_umask); // edited by AG
     exit;
 }
 

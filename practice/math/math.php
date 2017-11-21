@@ -93,7 +93,7 @@ else {
     </div>
     <div id="row">
       <div id="advance_area">
-        <form action="save_RT.php" method="post">
+        <form action="save_RT.php" method="post" onSubmit="document.getElementById('function_button').disabled=true;document.getElementById('function_button').value='Please Wait...';">
           <input id="myRT" type="hidden" name="reaction_time">
           <input id="function_button" type="submit" onclick="advanceScreen(start_time)" value="RESPOND">
         </form>
@@ -103,6 +103,7 @@ else {
 </div>
 </body>
 <script>
+
 /* =======================================*/
 /* ============== FUNCTIONS ============= */
 /* =======================================*/

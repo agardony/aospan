@@ -11,13 +11,13 @@ function calc_mean($arr) {
 }
 
 function calc_sd($mean,$arr) {
-    $sum = 0;
+	# fixed SD calculation, see: https://www.mathsisfun.com/data/standard-deviation-formulas.html
+    $sum_sq = 0;
     $count = count($arr);
     foreach ($arr as $value) {
-        $diff = $value - $mean;
-        $sum = $sum + $diff;
+        $diff_sq = ($value - $mean) * ($value - $mean);
+        $sum_sq = $sum_sq + $diff_sq;
     }
-    $sum_sq = $sum * $sum;
     $average_sq_error = ($sum_sq/$count);
     return sqrt($average_sq_error);
 }
@@ -29,7 +29,7 @@ $sd_adj = $sd_RT * 2.5;
 
 $_SESSION['trial'] = 0;
 $_SESSION['presentation_count'] = 1;
-$_SESSION['timeout'] = ($mean_RT + $sd_adj + 1)*1000;
+$_SESSION['timeout'] = ($mean_RT + $sd_adj)*1000;
 ?>
 <html>
 <head>

@@ -8,6 +8,9 @@ $total_error = $_SESSION['resp_errors_trial'] + $_SESSION['speed_errors_trial'];
 # for adaptive label
 if ($total_error <= 0) {
 	$total_error = 0;
+	$error_label = "errors";
+}
+elseif ($total_error == 1) {
 	$error_label = "error";
 }
 else {

@@ -2,7 +2,7 @@
 # start session for data transfer
 session_start();
 
-# prepare for a new experiment
+# prepare for a new http://cognitivetask.com
 $pres = $_SESSION['presentation'];
 $set = $_SESSION['current-set'] - 1;
 
